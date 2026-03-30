@@ -21,7 +21,7 @@ def browser():
     screen_width, screen_height = get_screen_size()
     with sync_playwright() as p:
         browser = p.chromium.launch(
-            headless=False,
+            headless=True,
             args=[f"--window-size={screen_width},{screen_height}", "--start-maximized"]
         )
         yield browser
